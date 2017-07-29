@@ -7,7 +7,7 @@ import java.security.MessageDigest;
  *
  * @author hlm
  */
-public final class MD5DigestUtil {
+public final class Md5DigestUtil {
 
 	private static final char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
 

@@ -8,8 +8,15 @@ package org.lushen.zhuifeng.commons.exceptions;
 @SuppressWarnings("serial")
 public class ApiException extends RuntimeException {
 	
-	public ApiException(String msg) {
-		super(msg);
+	private ApiError apiError;
+	
+	public ApiException(ApiError apiError) {
+		super();
+		this.apiError = apiError;
+	}
+
+	public ApiError getApiError() {
+		return apiError;
 	}
 
 }

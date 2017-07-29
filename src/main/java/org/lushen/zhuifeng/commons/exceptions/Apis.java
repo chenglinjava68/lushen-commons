@@ -11,7 +11,7 @@ public final class Apis {
 	 * 抛出一个HTTP API异常
 	 */
 	public static final void throwApiException(ApiError apiError) {
-		throw new ApiException(apiError.toJsonString());
+		throw new ApiException(apiError);
 	}
 
 }
