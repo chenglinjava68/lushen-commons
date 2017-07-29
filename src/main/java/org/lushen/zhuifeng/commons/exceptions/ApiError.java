@@ -14,6 +14,16 @@ public final class ApiError {
 	
 	private String msg;
 
+	public ApiError() {
+		super();
+	}
+
+	public ApiError(int errcode, String msg) {
+		super();
+		this.errcode = errcode;
+		this.msg = msg;
+	}
+
 	public int getErrcode() {
 		return errcode;
 	}
