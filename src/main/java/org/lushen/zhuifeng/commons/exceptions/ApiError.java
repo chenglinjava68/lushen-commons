@@ -9,19 +9,23 @@ import net.sf.json.JSONObject;
  * @author hlm
  */
 public final class ApiError {
+	
+	private String json;
 
 	private int errcode;
 	
 	private String msg;
 
-	public ApiError() {
-		super();
-	}
-
 	public ApiError(int errcode, String msg) {
 		super();
 		this.errcode = errcode;
 		this.msg = msg;
+		
+		//缓存，不再每次转换
+		JSONObject object = new JSONObject();
+		object.put("errcode", errcode);
+		object.put("msg", msg);
+		this.json = object.toString();
 	}
 
 	public int getErrcode() {
@@ -41,7 +45,7 @@ public final class ApiError {
 	}
 	
 	public String toJsonString() {
-		return JSONObject.fromObject(this).toString();
+		return this.json;
 	}
 	
 }

@@ -13,12 +13,5 @@ public final class Apis {
 	public static final void throwApiException(ApiError apiError) {
 		throw new ApiException(apiError.toJsonString());
 	}
-	
-	/**
-	 * 抛出一个HTTP API异常
-	 */
-	public static final void throwApiException(String msg) {
-		throw new ApiException(msg);
-	}
 
 }

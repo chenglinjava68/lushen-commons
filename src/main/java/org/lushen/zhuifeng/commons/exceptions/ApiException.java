@@ -6,7 +6,7 @@ package org.lushen.zhuifeng.commons.exceptions;
  * @author hlm
  */
 @SuppressWarnings("serial")
-public final class ApiException extends RuntimeException {
+final class ApiException extends RuntimeException {
 	
 	public ApiException(String msg) {
 		super(msg);
