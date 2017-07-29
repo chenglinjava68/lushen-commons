@@ -20,8 +20,7 @@ public enum HttpStatusEnum {
 	
 	SYSTEM_NOT_FOUND(404, "资源不存在"),
 	
-	SYSTEM_SERVER_ERROR(500, "需要用户验证")
-	;
+	SYSTEM_SERVER_ERROR(500, "需要用户验证");
 	
 	private int code;
 	
