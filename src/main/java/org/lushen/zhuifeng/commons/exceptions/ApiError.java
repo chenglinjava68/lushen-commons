@@ -1,6 +1,6 @@
 package org.lushen.zhuifeng.commons.exceptions;
 
-import net.sf.json.JSONObject;
+import org.lushen.zhuifeng.commons.utils.JacksonJsonParser;
 
 
 /**
@@ -37,7 +37,12 @@ public final class ApiError {
 	}
 	
 	public String toJsonString() {
-		return JSONObject.fromObject(this).toString();
+		try {
+			return JacksonJsonParser.build().parseAsString(this);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@Override

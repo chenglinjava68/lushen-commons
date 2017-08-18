@@ -2,6 +2,7 @@ package org.lushen.zhuifeng.commons.utils;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
@@ -72,8 +73,9 @@ public final class HttpUtil {
 	 * @param outputStr
 	 * 
 	 * @return
+	 * @throws IOException 
 	 */
-	public static final String httpRequest(String url, HttpMethod method, String outputStr) {
+	public static final String httpRequest(String url, HttpMethod method, String outputStr) throws IOException {
 		
 		OutputStream os = null;
 		InputStream is = null;
@@ -106,9 +108,10 @@ public final class HttpUtil {
 			throw new RuntimeException(e);
 			
 		} finally {
-			StreamCloseUtil.close(os);
-			StreamCloseUtil.close(is);
-			StreamCloseUtil.close(isr, br);
+			StreamUtils.closeOutputStream(os);
+			StreamUtils.closeInputStream(is);
+			StreamUtils.closeReader(isr);
+			StreamUtils.closeReader(br);
 		}
 		
 	}
