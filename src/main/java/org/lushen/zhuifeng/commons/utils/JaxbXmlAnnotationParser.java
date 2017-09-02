@@ -17,7 +17,6 @@ import com.sun.xml.internal.bind.marshaller.CharacterEscapeHandler;
  * 
  * @author hlm
  */
-@SuppressWarnings("restriction")
 public class JaxbXmlAnnotationParser implements Parser {
 	
 	private JaxbXmlAnnotationParser() {
